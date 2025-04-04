@@ -24,4 +24,6 @@ urlpatterns = [
     path('new_entry/<int:topic_id>/', views.new_entry, name='new_entry'),
     # Сторінка для редагування запису
     path('edit_entry/<int:entry_id>/', views.edit_entry, name='edit_entry'),
+    # ще назву
+    path('<int:pk>', views.TopicDetailView.as_view(), name='topic_detail'),
 ]

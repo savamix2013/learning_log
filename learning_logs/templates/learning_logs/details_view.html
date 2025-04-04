@@ -1,0 +1,20 @@
+{% block title %} Нотатки {% endblock title %}
+{% block content %}
+div class="page-header">
+    <h1>Нотатки</h1>
+    <p><a href="{% url 'learning_logs:index' %}">Головна</a> - <a href="{% url 'learning_logs:topics' %}">Теми</a></p>
+    <p><a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a></p>
+    <p><a href="{% url 'learning_logs:details_view' article.id %}">{{ article.title }}</a></p>
+    <p><a href="{% url 'learning_logs:edit_entry' article.id %}">Редагувати</a></p>
+    <p><a href="{% url 'learning_logs:delete_entry' article.id %}">Видалити</a></p>
+    <p><a href="{% url 'learning_logs:new_entry' topic.id %}">Додати нову нотатку</a></p>
+    <p><a href="{% url 'learning_logs:topic' topic.id %}">Назад до теми</a></p>
+    <p><a href="{% url 'learning_logs:topics' %}">Назад до списку тем</a></p>
+</div>
+<div class="page-header"></div>
+    <article>
+        <h1>{{ article.title }}</h1>
+        <p><strong>Date:</strong> {{ article.date }}</p>
+        <div>{{ article.full_text }}</div>
+    </article>
+{% endblock content %}

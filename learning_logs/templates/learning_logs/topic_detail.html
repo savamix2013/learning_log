@@ -1,0 +1,17 @@
+{% extends "learning_logs/base.html" %}
+{% block content %}
+  <p><strong>Topic:</strong> {{ topic }}</p>
+  <p><strong>Created on:</strong> {{ topic.date_added }}</p>
+  <p><strong>Last updated:</strong> {{ topic.date_updated }}</p>
+  <p><strong>Description:</strong> {{ topic.description }}</p>
+  <p><strong>Notes:</strong></p>
+  {% if notes %}
+    <ul>
+      {% for note in notes %}
+        <li>{{ note.text }} ({{ note.date_added }})</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No notes available for this topic.</p>
+  {% endif %}
+{% endblock content %}

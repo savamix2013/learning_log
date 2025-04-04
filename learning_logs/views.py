@@ -1,9 +1,17 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.http import Http404
+from django.views.generic import DetailView
+from .models import Articles
+from .forms import ArticlesForm
 
 from .models import Topic, Entry
 from .forms import TopicForm, EntryForm
+
+class TopicDetailView(DetailView):
+    model = Articles
+    template_name = 'learning_logs/topic_detail.html'
+    context_object_name = 'article'
 
 def index(request):
     """Головна сторінка журналу спостережень"""
