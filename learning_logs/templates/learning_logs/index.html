@@ -1,6 +1,7 @@
-<p>
 {% extends "learning_logs/base.html" %}
+{% load static %}
 
 {% block content %}
     <p>Week 1: Introduction to Python</p>
+    <img src="{% static 'main/img/images.jpeg' %}" alt="Main Page Image" style="max-width: 100%; height: auto;">
 {% endblock content %}
