@@ -1,6 +1,6 @@
 {% block title %} Нотатки {% endblock title %}
 {% block content %}
-div class="page-header">
+<div class="page-header">
     <h1>Нотатки</h1>
     <p><a href="{% url 'learning_logs:index' %}">Головна</a> - <a href="{% url 'learning_logs:topics' %}">Теми</a></p>
     <p><a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a></p>
@@ -16,5 +16,6 @@ div class="page-header">
         <h1>{{ article.title }}</h1>
         <p><strong>Date:</strong> {{ article.date }}</p>
         <div>{{ article.full_text }}</div>
+        <img src="{% static 'images/example.jpg' %}" alt="Example Image" style="max-width: 100%; height: auto;">
     </article>
 {% endblock content %}
